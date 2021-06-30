@@ -3,7 +3,7 @@ import classes from './Navbar.module.css'
 import SocialLinks from '../SocialLinks/SocialLinks'
 
 import logo from '../../Assets/logo.png'
-import { Button, makeStyles, MenuItem, Select } from '@material-ui/core'
+import { Button, MenuItem, Select } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
 import Container from 'Components/Container/Container'
@@ -11,17 +11,8 @@ import { HashLink } from 'react-router-hash-link'
 import { connect } from 'react-redux'
 import { cx } from 'Utils/classnames'
 
-const useStyles = makeStyles({
-    root: {
-        '& .MuiOutlinedInput-root.Mui-focused': {
-            borderColor: 'black'
-        }
-    }
-})
 
 const Navbar = (props) => {
-    const material = useStyles()
-
     const { t, i18n } = useTranslation()
 
     const handleChangeLanguage = (event) => {
@@ -42,7 +33,7 @@ const Navbar = (props) => {
                 
                 <SocialLinks className={classes.social}/>
                 
-                <Select classes={{ root: cx(classes.select, material), outlined: classes.selectOutline }} variant="outlined" defaultValue="ru" onChange={handleChangeLanguage}>
+                <Select classes={{ root: classes.select, outlined: classes.selectOutline }} variant="outlined" defaultValue="ru" onChange={handleChangeLanguage}>
                         <MenuItem value="ru">RU</MenuItem>
                         <MenuItem value="ua">UA</MenuItem>
                 </Select>

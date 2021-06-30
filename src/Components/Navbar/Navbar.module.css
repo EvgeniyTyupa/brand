@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 15px;
+    color: #212529;
 }
 .logo {
     width: 100px;
@@ -29,6 +30,9 @@
 .select {
     padding: 4.5px 14px !important;
     padding-right: 32px !important;
+}
+.selectOutline {
+    border-color: #ac0000 !important;
 }
 .register {
     text-decoration: none;

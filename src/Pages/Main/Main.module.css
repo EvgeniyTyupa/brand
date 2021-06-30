@@ -1,0 +1,313 @@
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #212529;
+}
+
+/* HOME */
+.homeBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+}
+.home {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+.homeSide {
+    width: 50%;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+}
+.header h1 {
+    font-size: 70px;
+}
+.header span {
+    font-size: 55px;
+}
+.homeSide p {
+    color: #ac0000;
+    font-size: 30px;
+}
+.sub {
+    font-size: 30px;
+    font-weight: bold;
+}
+.homeBut {
+    background-color: #ac0000 !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    padding: 25px 50px 20px !important;
+}
+.homeBut:hover {
+    background-color: #970505 !important;
+}
+.homeText {
+    width: 345px;
+    margin-block-start: 10px;
+}
+.dates {
+    display: flex;
+    flex-direction: column;
+    font-size: 46px;
+}
+.home .homeSide + .homeSide {
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+
+/* LINE */
+.redBlackLine {
+    height: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+.redBlackLine div {
+    width: 50%;
+    height: 100%;
+}
+.redLine {
+    background-color: #ac0000;
+}
+.blackLine {
+    background-color: black;
+}
+
+/* RPP */
+.rpp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.wordBlock {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+.rppText {
+    font-size: 20px;
+    padding-left: 15px;
+    position: relative;
+    top: -30px;
+}
+.rppHeader {
+    font-size: 200px;
+    font-weight: 700;
+}
+
+/* ABOUT */
+.aboutBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.empty {
+    display: flex;
+    align-items: center;
+}
+.empty div {
+    width: 50%;
+    height: 65px;
+}
+.emptyGray {
+    background-color: #f6f6f6;
+}
+.emptyWhite {
+    background-color: white;
+}
+.aboutBody {
+    background-color: #f6f6f6;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.about {
+    display: flex;
+}
+.aboutSide {
+    width: 50%;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.aboutBallons {
+    width: 50%;
+}
+.about li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.about li::marker {
+    color: #ac0000;
+    position: relative;
+    top: 3px;
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+/* COURSE */
+.course {
+    display: flex;
+}
+.courseText {
+    width: 50%;
+    padding-top: 100px;
+}
+.courseText h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.courseText p {
+    font-size: 18px;
+}
+.course img {
+    width: 500px;
+    margin-left: 50px;
+}
+.courseBut {
+    margin-top: 100px !important;
+}
+
+
+/* WHO */
+.whoBlock {
+    width: 100%;
+}
+.emptyWhite h2 {
+    padding-bottom: 25px;
+    padding-left: 30px;
+    font-size: 40px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+.whoBlock {
+    background-color: #f6f6f6;
+    margin-top: 100px;
+}
+.whoBody {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.who {
+    display: flex;
+}
+.who img {
+    width: 500px;
+}
+.whoPoints {
+    padding-left: 100px;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.whoPoints li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.whoPoints li::marker {
+    color: #ac0000;
+    position: relative;
+    top: 3px;
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+/* PROGRAM */
+.programTitle h2{
+    font-size: 40px;
+    margin-block-end: 0;
+}
+.programBlock {
+    width: 100%;
+}
+.programBlock .empty div{
+    width: 60%;
+}
+.emptySmallGray {
+    width: 40% !important;
+}
+.programBody {
+    background-color: #f6f6f6;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.program li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.program li ul {
+    padding-left: 15px;
+    margin-top: 15px;
+}
+.program li ul li {
+    padding-left: 10px;
+}
+.program li::marker {
+    color: #ac0000;
+}
+.program img {
+    width: 30px;
+}
+.programPoint h4 {
+    font-size: 20px;
+    display: flex;
+    margin-block-end: 10px;
+    align-items: center;
+}
+.programPoint h4 span {
+    margin-left: 10px;
+}
+.program {
+    display: flex;
+    margin-bottom: 100px;
+}
+.programSide + .programSide {
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.programDate {
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 40px;
+}
+
+/* TRENER */
+.trener {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.trener h2 {
+    font-size: 40px;
+}
+.trener img {
+    width: 60%;
+}
