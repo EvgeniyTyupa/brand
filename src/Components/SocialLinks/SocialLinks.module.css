@@ -1,0 +1,9 @@
+.main svg{
+    color: black;
+    width: 20px;
+    transition-duration: .3s !important;
+    transition: inherit
+}
+.main svg:hover {
+    color: #ac0000;
+}

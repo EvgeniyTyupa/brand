@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "menu": {
+            "course": "О курasdasdaсе",
+            "who": "Для кого",
+            "content": "Содержание",
+            "trener": "Куратор",
+            "price": "Стоимость"
+        }
+    },
+    "actions": {
+        "register": "Регистрация"
+    }
+}

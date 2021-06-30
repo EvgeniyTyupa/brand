@@ -1,0 +1,44 @@
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.logo {
+    width: 100px;
+}
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+.links a {
+    text-decoration: none;
+    color: black;
+}
+.links a:hover {
+    color: #ac0000;
+}
+.social {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.select {
+    padding: 4.5px 14px !important;
+    padding-right: 32px !important;
+}
+.register {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 8px;
+    transition-duration: .3s;
+    color: black;
+}
+.register:hover {
+    background-color: #ac0000;
+    color: white;
+}
