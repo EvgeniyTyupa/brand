@@ -1,0 +1,27 @@
+.button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.openBut svg{
+    font-size: 50px;
+}
+.closeBut{
+    align-self: flex-end;
+}
+.closeBut svg{
+    font-size: 50px;
+}
+.paper{
+    width: 60%;
+    background-color: white !important;
+    padding: 30px;
+    padding-left: 60px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}

@@ -1,0 +1,25 @@
+.main {
+    width: 350px;
+}
+.main form {
+    width: 100%;
+    display: flex;
+}
+.field div {
+    margin-top: 3px;
+    width: 95%;
+}
+.field p {
+    position: absolute;
+    bottom: -25px
+}
+.main form button {
+    background-color: #ac0000;
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+    height: 55px;
+}
+.main form button:hover {
+    background-color: #970505;
+}

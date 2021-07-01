@@ -11,9 +11,18 @@ import pen from '../../Assets/pen.png'
 import trener from '../../Assets/trener.png'
 
 import { cx } from 'Utils/classnames'
+import SocialLinks from 'Components/SocialLinks/SocialLinks'
+import SubscribeForm from 'Components/SubscribeForm/SubscribeForm'
+import { useRef } from 'react'
 
 const Main = (props) => {
     const { t } = useTranslation()
+
+    const priceRef = useRef(null)
+
+    const handleScrollToPrice = () => {
+        priceRef.current.scrollIntoView()
+    }
 
     return(
         <div className={classes.main}>
@@ -32,7 +41,7 @@ const Main = (props) => {
                 </Container>
                 <Container className={classes.home}>
                     <div className={classes.homeSide}>
-                        <SimpleButton text={t("home.button")} className={classes.homeBut}/>
+                        <SimpleButton action={handleScrollToPrice} text={t("home.button")} className={classes.homeBut}/>
                     </div>
                     <div className={classes.homeSide}>
                         <div className={classes.dates}>
@@ -84,8 +93,8 @@ const Main = (props) => {
                     </Container>
                 </div>
             </div>
-            <Container className={classes.course}>
-                <div className={classes.courseText}>
+            <Container className={classes.course} >
+                <div className={classes.courseText} id="course">
                     <h2>{t("course.title")}</h2>
                     <p>{t("course.one")}<br/>{t("course.two")}</p>
                     <p>{t("course.three")}</p>
@@ -96,8 +105,8 @@ const Main = (props) => {
                 </div>
                 <img src={squares}/>
             </Container>
-            <SimpleButton text={t("home.button")} className={cx(classes.homeBut, classes.courseBut)}/>
-            <div className={classes.whoBlock}>
+            <SimpleButton action={handleScrollToPrice} text={t("home.button")} className={cx(classes.homeBut, classes.courseBut)}/>
+            <div className={classes.whoBlock} id="who">
                 <div className={classes.empty}>
                     <div className={classes.emptyGray}/>
                     <div className={classes.emptyWhite}>
@@ -127,7 +136,7 @@ const Main = (props) => {
             <Container className={classes.programTitle}>
                 <h2>{t("program.title")}</h2>
             </Container>
-            <div className={classes.programBlock}>
+            <div className={classes.programBlock} id="program">
                 <div className={classes.empty}>
                     <div className={classes.emptyWhite}/>
                     <div className={cx(classes.emptyGray, classes.emptySmallGray)}/>
@@ -197,15 +206,94 @@ const Main = (props) => {
                             </div>
                         </div>
                     </Container>
-                    <SimpleButton text={t("home.button")} className={classes.homeBut}/>
+                    <SimpleButton action={handleScrollToPrice} text={t("home.button")} className={classes.homeBut}/>
                 </div>
             </div>
             <Container className={classes.trener}>
-                <h2>{t("trener.title")}</h2>
+                <h2 id="trener">{t("trener.title")}</h2>
+                <p>{t("trener.name")}</p>
                 <div className={classes.trenerImage}>
-                    <img src={trener}/>
+                    <span className={classes.trenerTextOne}>{t("trener.main.one")}</span>
+                    <span className={classes.trenerTextTwo}>{t("trener.main.two")}</span>
+                    <span className={classes.trenerTextThree}>{t("trener.main.three")}</span>
+                    <span className={classes.trenerTextFour}>{t("trener.main.four")}</span>
+                    <span className={classes.trenerTextFive}>{t("trener.main.five")}</span>
                 </div>
+                <div className={classes.trenerInfo}>
+                    <ul>
+                        <li>{t("trener.info.one")}</li>
+                        <li>{t("trener.info.two")}</li>
+                        <li>{t("trener.info.three")}</li>
+                        <li>{t("trener.info.four")}</li>
+                        <li>{t("trener.info.five")}</li>
+                    </ul>
+                </div>
+               
             </Container>
+            <div className={classes.priceBlock} id="price" ref={priceRef}>
+                <h2>{t("price.title")}</h2>
+                <div className={classes.empty}>
+                    <div className={cx(classes.emptyGray, classes.emptySmallGray)}/>
+                    <div className={classes.emptyWhite}/>
+                </div>
+                <div className={classes.priceBody}>
+                    <Container className={classes.price}>
+                        <div className={classes.priceItem}>
+                            <h5>{t("price.one.title")}</h5>
+                            <ul>
+                                <li>{t("price.one.one")}</li>
+                                <li>{t("price.one.two")}</li>
+                                <li>{t("price.one.three")}</li>
+                                <li>{t("price.one.four")}</li>
+                                <li>{t("price.one.five")}</li>
+                            </ul>
+                            <p>999 грн / <br/> 35 $</p>
+                            <SimpleButton text={t("price.buy")}/>
+                        </div>  
+                        <div className={classes.priceItem}>
+                            <h5>{t("price.two.title")}</h5>
+                            <ul>
+                                <li>{t("price.two.one")}</li>
+                                <li>{t("price.two.two")}</li>
+                                <li>{t("price.two.three")}</li>
+                                <li>{t("price.two.four")}</li>
+                                <li>{t("price.two.five")}</li>
+                                <li>{t("price.two.six")}</li>
+                                <li>{t("price.two.seven")}</li>
+                                <li>{t("price.two.eight")}</li>
+                            </ul>
+                            <p>1299 грн / <br/> 45 $</p>
+                            <SimpleButton text={t("price.buy")}/>
+                        </div> 
+                        <div className={classes.priceItem}>
+                            <h5>{t("price.three.title")}</h5>
+                            <ul>
+                                <li>{t("price.three.one")}</li>
+                                <li>{t("price.three.two")}</li>
+                                <li>{t("price.three.three")}</li>
+                                <li>{t("price.three.four")}</li>
+                                <li>{t("price.three.five")}</li>
+                                <li>{t("price.three.six")}</li>
+                                <li>{t("price.three.seven")}</li>
+                                <li>{t("price.three.eight")}</li>
+                                <li>{t("price.three.nine")}</li>
+                            </ul>
+                            <p>5500 грн / <br/> 200 $</p>
+                            <SimpleButton text={t("price.buy")}/>
+                        </div> 
+                    </Container>
+                </div>
+                <div className={classes.empty}>
+                    <div className={classes.emptyWhite}/>
+                    <div className={cx(classes.emptyGray, classes.emptySmallGray)}/>
+                </div>
+            </div>
+           
+            <Container className={classes.footer}>
+                <SocialLinks className={classes.footerLinks}/>
+                <SubscribeForm/>
+            </Container>
+            
         </div>
     )
 }
