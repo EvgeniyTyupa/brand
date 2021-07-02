@@ -24,12 +24,16 @@ export const googleApi = {
     }
 }
 
-// export const tgApi = {
-//     saveDataToTelegramBot(formData){
-//         let message = "<strong>Новая заявка!</strong>\n<strong>Лендинг:</strong> brand.profi-space.com / обычный\n<strong>Имя:</strong> " + formData.name +  "\n<strong>Телефон:</strong> " + formData.phone + "\n<strong>Email:</strong> " + formData.email + "\n<strong>Род деятельности:</strong> " + formData.job + "\n<strong>Почему решили пройти курс:</strong> " + formData.why;
-//         const data 
-//         // @ts-ignore
-//         return axios.post(tgUrl, formData)
-//         .then(response => response.data)
-//     }
-// }
+export const tgApi = {
+    saveDataToTelegramBot(formData){
+        let message = "<strong>Новая заявка!</strong>\n<strong>Лендинг:</strong> brand.profi-space.com / обычный\n<strong>Имя:</strong> " + formData.name +  "\n<strong>Телефон:</strong> " + formData.phone + "\n<strong>Email:</strong> " + formData.email + "\n<strong>Род деятельности:</strong> " + formData.job + "\n<strong>Почему решили пройти курс:</strong> " + formData.why;
+        const data = {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+        }
+        // @ts-ignore
+        return axios.post(tgUrl, data)
+        .then(response => response.data)
+    }
+}

@@ -27,7 +27,9 @@ const SubscribeForm = (props) => {
     const { handleSubmit, control, reset, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
+        reset({
+            email: ""
+        })
     }
 
     return(

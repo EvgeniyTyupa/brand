@@ -1,4 +1,4 @@
-import { googleApi } from "Api/api"
+import { googleApi, tgApi } from "Api/api"
 
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
 const SET_CURRENT_LANGUAGE = 'SET_CURRENT_LANGUAGE'
@@ -6,7 +6,7 @@ const SET_IS_SUCCESS = 'SET_IS_SUCCESS'
 
 let initialState = {
     isFetching: false,
-    currentLanguage: "ru",
+    currentLanguage: "ua",
     isSuccess: false
 }
 
@@ -42,10 +42,12 @@ export const saveToGoogleTable = (formData) => async (dispatch) => {
     dispatch(setIsFetching(true));
     try{
         await googleApi.saveDataToGoogleSheet(formData);
+        await tgApi.saveDataToTelegramBot(formData)
         dispatch([setIsSuccess(true), setIsFetching(false)]);
     }catch(err){
         dispatch([setIsSuccess(false), setIsFetching(false)]);
     }
 }
+
 
 export default commonReducer

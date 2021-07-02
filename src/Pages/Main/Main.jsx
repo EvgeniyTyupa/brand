@@ -8,7 +8,7 @@ import ballons from '../../Assets/ballons.jpeg'
 import squares from '../../Assets/squares.jpg'
 import apple from '../../Assets/apple.jpg'
 import pen from '../../Assets/pen.png'
-import trenerMob from '../../Assets/trener_mob.png'
+import trenerMob from '../../Assets/trener_mob.jpg'
 
 
 import { cx } from 'Utils/classnames'
@@ -59,7 +59,7 @@ const Main = (props) => {
 
     useEffect(() => {
         setUrl(window.location.href)
-        if(lang === "ua"){
+        if(lang === "ru"){
             i18n.changeLanguage(lang)
             props.setCurrentLanguage(lang)
         }
@@ -153,7 +153,7 @@ const Main = (props) => {
                 </div>
                 <div className={classes.aboutBody}>
                     <Container className={classes.about}>
-                        <img src={ballons} className={classes.aboutBallons}/>
+                        <img src={ballons} className={classes.aboutBallons} alt="ballons"/>
                         <div className={classes.aboutSide}>
                             <ul data-aos="fade-left">
                                 <li>{t("about.one")}</li>
@@ -179,7 +179,7 @@ const Main = (props) => {
                     <p>{t("course.six")}</p>
                     <p>{t("course.seven")}</p>
                 </div>
-                <img src={squares}/>
+                <img src={squares} alt="squares"/>
             </Container>
             <SimpleButton action={handleScrollToPrice} text={t("home.button")} className={cx(classes.homeBut, classes.courseBut)}/>
             <div className={classes.whoBlock} id="who">
@@ -191,7 +191,7 @@ const Main = (props) => {
                 </div>
                 <div className={classes.whoBody}>
                     <Container className={classes.who}>
-                        <img src={apple}/>
+                        <img src={apple} alt="apple"/>
                         <div className={classes.whoPoints}>
                             <ul data-aos="fade-left">
                                 <li>{t("who.one")}</li>
@@ -222,7 +222,7 @@ const Main = (props) => {
                         <div className={classes.programSide} data-aos="fade-up">
                             <div className={classes.programPoint}>
                                 <h4>
-                                    <img src={pen}/>
+                                    <img src={pen} alt="pen"/>
                                     <span>{t("program.one.title")}</span>
                                 </h4>                      
                                 <span className={classes.programDate}>{t("program.one.date")}</span>
@@ -234,7 +234,7 @@ const Main = (props) => {
                             </div>
                             <div className={classes.programPoint}>
                                 <h4>
-                                    <img src={pen}/>
+                                    <img src={pen} alt="pen"/>
                                     <span>{t("program.two.title")}</span>
                                 </h4>                        
                                 <span className={classes.programDate}>{t("program.two.date")}</span>
@@ -244,7 +244,7 @@ const Main = (props) => {
                             </div>
                             <div className={classes.programPoint}>
                                 <h4>
-                                    <img src={pen}/>
+                                    <img src={pen} alt="pen"/>
                                     <span>{t("program.three.title")}</span>
                                 </h4>                      
                                 <span className={classes.programDate}>{t("program.three.date")}</span>
@@ -257,7 +257,7 @@ const Main = (props) => {
                         <div className={classes.programSide} data-aos="fade-up">
                             <div className={classes.programPoint}>
                                 <h4>
-                                    <img src={pen}/>
+                                    <img src={pen} alt="pen"/>
                                     <span>{t("program.four.title")}</span>
                                 </h4>                        
                                 <span className={classes.programDate}>{t("program.four.date")}</span>
@@ -269,7 +269,7 @@ const Main = (props) => {
                             </div>
                             <div className={classes.programPoint}>
                                 <h4>
-                                    <img src={pen}/>
+                                    <img src={pen} alt="pen"/>
                                     <span>{t("program.five.title")}</span>
                                 </h4>                   
                                 <span className={classes.programDate}>{t("program.five.date")}</span>
@@ -288,7 +288,7 @@ const Main = (props) => {
             <Container className={classes.trener}>
                 <h2 id="trener" data-aos="fade">{t("trener.title")}</h2>
                 <p>{t("trener.name")}</p>
-                <img src={trenerMob} className={classes.trenerMob}/>
+                <img src={trenerMob} className={classes.trenerMob} alt="trener"/>
                 <div className={classes.trenerImage}>
                     <span className={classes.trenerTextOne}>{t("trener.main.one")}</span>
                     <span className={classes.trenerTextTwo}>{t("trener.main.two")}</span>
