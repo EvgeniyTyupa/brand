@@ -8,6 +8,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     color: #212529;
+    overflow-x: hidden;
 }
 
 /* HOME */
@@ -300,6 +301,9 @@ h1 {
 }
 
 /* TRENER */
+.trenerMob {
+    display: none;
+}
 .trener {
     display: flex;
     flex-direction: column;
@@ -332,23 +336,23 @@ h1 {
     position: relative;
 }
 .trenerTextOne {
-    top: 20px;
+    top: 15px;
 }
 .trenerTextTwo {
-    top: 60px;
+    top: 45px;
 }
 .trenerTextThree {
-    top: 35px;
+    top: 10px;
     left: 550px;
     width: 220px !important;
 }
 .trenerTextFour {
-    top: 65px;
+    top: 40px;
     left: 550px;
     width: 220px !important;
 }
 .trenerTextFive {
-    top: 65px;
+    top: 25px;
     left: 550px;
     width: 230px !important;
 }
@@ -523,5 +527,249 @@ h1 {
     .courseText {
         width: 100%;
         text-align: center;
+    }
+    .who {
+        flex-direction: column-reverse;
+    }
+    .who img {
+        width: 100%;
+    }
+    .emptyWhite h2 {
+        padding-left: 17px;
+        font-size: 36px;
+    }
+    .trenerImage {
+        height: 570px;
+    }
+    .trenerTextOne {
+        top: 0;
+    }
+    .trenerTextTwo {
+        top: 5px;
+    }
+    .trenerTextThree {
+        top: -50px;
+        left: 450px;
+    }
+    .trenerTextFour {
+        top: -55px;
+        left: 455px;
+    }
+    .trenerTextFive {
+        top: -95px;
+        left: 455px;
+    }
+    .trenerInfo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .home {
+        margin-top: 50px;
+    }
+    .homeBlock {
+        height: auto;
+    }
+    .header h1 {
+        font-size: 60px;
+    }
+    .empty div {
+        height: 50px;
+    }
+    .emptyWhite h2 {
+        font-size: 27px;
+    }
+    .program {
+        flex-direction: column;
+    }
+    .programSide + .programSide {
+        padding-left: 0;
+    }
+    .programBody {
+        padding-top: 50px;
+    }
+    .priceItem {
+        width: 65%;
+    }
+    .priceItem br {
+        display: block;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerLinks {
+        width: 60%;
+        justify-content: space-between;
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .footerLinks svg{
+        font-size: 50px !important;
+    }
+    .trener h2 {
+        margin-bottom: 0px;
+    }
+    .trener p {
+        align-self: center;
+    }
+    .trenerImage {
+        display: none;
+    }
+    .trenerMob {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .header h1 {
+        font-size: 40px;
+    }
+    .header span {
+        font-size: 36px;
+    }
+    .homeSide p {
+        font-size: 24px;
+    }
+    .homeSide {
+        display: flex;
+        flex-direction: column;
+    }
+    .homeBut {
+        font-size: 24px !important;
+    }
+    .courseBut {
+        margin-top: 50px !important;
+    }
+    .dates {
+        font-size: 36px;
+    }
+    .rppHeader {
+        font-size: 140px;
+    }
+    .rppText {
+        font-size: 18px;
+    }
+    .redBlackLine {
+        margin-bottom: 50px;
+    }
+    .rpp {
+        margin-bottom: 50px;
+    }
+    .aboutSide {
+        padding-left: 0;
+    }
+    .courseText {
+        padding-top: 50px;
+    }
+    .whoBlock .emptyGray {
+        display: none;
+    }
+    .whoBlock .empty {
+        text-align: center;
+    }
+    .whoBlock .empty div{
+        width: 100%;
+    }
+    .whoPoints {
+        padding-left: 0;
+    }
+    .programTitle {
+        position: relative;
+        top: -25px;
+    }
+    .programTitle h2 {
+        margin-top: 0;
+        font-size: 32px;
+    }
+    .program {
+        margin-bottom: 50px;
+    }
+    .trenerInfo {
+        padding-left: 0;
+    }
+    .trenerInfo li::before {
+        left: 0;
+    }
+    .priceBlock {
+        margin-top: 0;
+    }
+    .priceItem {
+        width: 95%;
+    }
+    .priceItem p {
+        font-size: 30px;
+    }
+    .priceItem button {
+        font-size: 16px !important;
+    }
+    .priceItem ul {
+        padding-left: 15px;
+    }
+    .priceItem li::before {
+        left: 15px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .trener img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .homeBut {
+        font-size: 18px !important;
+    }
+    .rppText {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    .rppHeader {
+        font-size: 120px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .homeBut {
+        padding: 25px 35px 20px !important;
+    }
+    .rpp {
+        flex-direction: column;
+    }
+    .wordBlock {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .trener h2 {
+        font-size: 30px;
+    }
+    .trener p {
+        font-size: 26px;
+    }
+    .priceBlock h2 {
+        font-size: 30px;
+    }
+    .homeText {
+        width: 280px;
+    }
+    .header h1 {
+        font-size: 34px;
+    }
+    .header span {
+        font-size: 30px;
+    }
+    .homeSide p {
+        font-size: 20px;
+    }
+    .dates {
+        font-size: 28px;
+    }
+    .footerLinks {
+        width: 85%;
+    }
+    .footer {
+        padding-bottom: 25px;
     }
 }

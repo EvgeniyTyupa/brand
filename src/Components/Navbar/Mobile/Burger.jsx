@@ -48,11 +48,11 @@ const Burger = (props) => {
                 </div>
                 <div className={classes.footer}>
                     <div className={classes.languageButtons}>
-                        <Button onClick={()=>{handleChangeLanguage("ru")}} classes={{root: props.currentLanguage === "en" ? classes.activeLang : undefined, label: classes.langLabel}}>RU</Button>
+                        <Button onClick={()=>{handleChangeLanguage("ru")}} classes={{root: props.currentLanguage === "ru" ? classes.activeLang : undefined, label: classes.langLabel}}>RU</Button>
                         <Button onClick={()=>{handleChangeLanguage("ua")}} classes={{root: props.currentLanguage === "ua" ? classes.activeLang : undefined, label: classes.langLabel}}>UA</Button>
                     </div>
                     <div className={classes.links}>
-                        <SocialLinks/>
+                        <SocialLinks className={classes.socialLinks}/>
                     </div>
                 </div>
             </Drawer>

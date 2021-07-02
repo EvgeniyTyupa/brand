@@ -23,3 +23,21 @@
 .main form button:hover {
     background-color: #970505;
 }
+
+@media screen and (max-width: 350px) {
+    .main {
+        width: 100%;
+    }
+    .main form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main form button {
+        align-self: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .field div {
+        width: 100%;
+    }
+}

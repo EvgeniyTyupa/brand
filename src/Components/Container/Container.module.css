@@ -17,3 +17,28 @@
         box-sizing: border-box;
     }
 }
+
+@media screen and (max-width: 756px) {
+    .main {
+        width: 556px;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    .main {
+        width: 456px;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .main {
+        width: 370px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .main {
+        width: 320px;
+    }
+}

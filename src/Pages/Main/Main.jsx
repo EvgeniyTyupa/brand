@@ -8,14 +8,22 @@ import ballons from '../../Assets/ballons.jpeg'
 import squares from '../../Assets/squares.jpg'
 import apple from '../../Assets/apple.jpg'
 import pen from '../../Assets/pen.png'
-import trener from '../../Assets/trener.png'
+import trenerMob from '../../Assets/trener_mob.png'
+
 
 import { cx } from 'Utils/classnames'
 import SocialLinks from 'Components/SocialLinks/SocialLinks'
 import SubscribeForm from 'Components/SubscribeForm/SubscribeForm'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Main = (props) => {
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    }, []);
+
     const { t } = useTranslation()
 
     const priceRef = useRef(null)
@@ -30,21 +38,21 @@ const Main = (props) => {
                 <Container className={classes.home}>
                     <div className={classes.homeSide}>
                         <div className={classes.header}>
-                            <h1>{t("home.title")}</h1>
-                            <span>{t("home.subTitle")}</span>
+                            <h1 data-aos="fade-right">{t("home.title")}</h1>
+                            <span data-aos="fade-right" data-aos-delay="400">{t("home.subTitle")}</span>
                         </div>
-                        <p className={classes.sub}>{t("home.sub")}</p>
+                        <p className={classes.sub} data-aos="fade-left" data-aos-delay="800">{t("home.sub")}</p>
                     </div>
                     <div className={classes.homeSide}>
-                        <p className={classes.homeText}>{t("home.text")}</p>
+                        <p className={classes.homeText} data-aos="fade-left" data-aos-delay="1200">{t("home.text")}</p>
                     </div>
                 </Container>
                 <Container className={classes.home}>
-                    <div className={classes.homeSide}>
+                    <div className={classes.homeSide} data-aos="fade-up" data-aos-delay="2200">
                         <SimpleButton action={handleScrollToPrice} text={t("home.button")} className={classes.homeBut}/>
                     </div>
                     <div className={classes.homeSide}>
-                        <div className={classes.dates}>
+                        <div className={classes.dates} data-aos="fade" data-aos-delay="1600">
                             <span>20, 22,</span>
                             <span>26, 29 {t("home.july")},</span>
                             <span>3 {t("home.aug")}</span>
@@ -56,16 +64,16 @@ const Main = (props) => {
                 <div className={classes.redLine}/>
                 <div className={classes.blackLine}/>
             </Container>
-            <Container className={classes.rpp}>
-                <div className={classes.wordBlock}>
+            <Container className={classes.rpp} >
+                <div className={classes.wordBlock} data-aos="fade-up">
                     <span className={classes.rppHeader}>{t("rpp.one.title")}</span>
                     <span className={classes.rppText}>{t("rpp.one.text")}</span>
                 </div>
-                <div className={classes.wordBlock}>
+                <div className={classes.wordBlock} data-aos="fade-up">
                     <span className={classes.rppHeader}>{t("rpp.two.title")}</span>
                     <span className={classes.rppText}>{t("rpp.two.text")}</span>
                 </div>
-                <div className={classes.wordBlock}>
+                <div className={classes.wordBlock} data-aos="fade-up">
                     <span className={classes.rppHeader}>{t("rpp.three.title")}</span>
                     <span className={classes.rppText}>{t("rpp.three.text")}</span>
                 </div>
@@ -79,7 +87,7 @@ const Main = (props) => {
                     <Container className={classes.about}>
                         <img src={ballons} className={classes.aboutBallons}/>
                         <div className={classes.aboutSide}>
-                            <ul>
+                            <ul data-aos="fade-left">
                                 <li>{t("about.one")}</li>
                                 <li>{t("about.two")}</li>
                                 <li>{t("about.three")}</li>
@@ -94,7 +102,7 @@ const Main = (props) => {
                 </div>
             </div>
             <Container className={classes.course} >
-                <div className={classes.courseText} id="course">
+                <div className={classes.courseText} id="course" data-aos="fade-right">
                     <h2>{t("course.title")}</h2>
                     <p>{t("course.one")}<br/>{t("course.two")}</p>
                     <p>{t("course.three")}</p>
@@ -110,14 +118,14 @@ const Main = (props) => {
                 <div className={classes.empty}>
                     <div className={classes.emptyGray}/>
                     <div className={classes.emptyWhite}>
-                        <h2>{t("who.title")}</h2>
+                        <h2 data-aos="fade-down">{t("who.title")}</h2>
                     </div>
                 </div>
                 <div className={classes.whoBody}>
                     <Container className={classes.who}>
                         <img src={apple}/>
                         <div className={classes.whoPoints}>
-                            <ul>
+                            <ul data-aos="fade-left">
                                 <li>{t("who.one")}</li>
                                 <li>{t("who.two")}</li>
                                 <li>{t("who.three")}</li>
@@ -134,7 +142,7 @@ const Main = (props) => {
                 </div>
             </div>
             <Container className={classes.programTitle}>
-                <h2>{t("program.title")}</h2>
+                <h2 data-aos="fade-right">{t("program.title")}</h2>
             </Container>
             <div className={classes.programBlock} id="program">
                 <div className={classes.empty}>
@@ -143,7 +151,7 @@ const Main = (props) => {
                 </div>
                 <div className={classes.programBody}>
                     <Container className={classes.program}>
-                        <div className={classes.programSide}>
+                        <div className={classes.programSide} data-aos="fade-up">
                             <div className={classes.programPoint}>
                                 <h4>
                                     <img src={pen}/>
@@ -178,7 +186,7 @@ const Main = (props) => {
                                 </ul>
                             </div>
                         </div>
-                        <div className={classes.programSide}>
+                        <div className={classes.programSide} data-aos="fade-up">
                             <div className={classes.programPoint}>
                                 <h4>
                                     <img src={pen}/>
@@ -210,8 +218,9 @@ const Main = (props) => {
                 </div>
             </div>
             <Container className={classes.trener}>
-                <h2 id="trener">{t("trener.title")}</h2>
+                <h2 id="trener" data-aos="fade">{t("trener.title")}</h2>
                 <p>{t("trener.name")}</p>
+                <img src={trenerMob} className={classes.trenerMob}/>
                 <div className={classes.trenerImage}>
                     <span className={classes.trenerTextOne}>{t("trener.main.one")}</span>
                     <span className={classes.trenerTextTwo}>{t("trener.main.two")}</span>
@@ -221,6 +230,11 @@ const Main = (props) => {
                 </div>
                 <div className={classes.trenerInfo}>
                     <ul>
+                        <li>{t("trener.main.one")}</li>
+                        <li>{t("trener.main.two")}</li>
+                        <li>{t("trener.main.three")}</li>
+                        <li>{t("trener.main.four")}</li>
+                        <li>{t("trener.main.five")}</li>
                         <li>{t("trener.info.one")}</li>
                         <li>{t("trener.info.two")}</li>
                         <li>{t("trener.info.three")}</li>
@@ -238,7 +252,7 @@ const Main = (props) => {
                 </div>
                 <div className={classes.priceBody}>
                     <Container className={classes.price}>
-                        <div className={classes.priceItem}>
+                        <div className={classes.priceItem} data-aos="fade-up">
                             <h5>{t("price.one.title")}</h5>
                             <ul>
                                 <li>{t("price.one.one")}</li>
@@ -250,7 +264,7 @@ const Main = (props) => {
                             <p>999 грн / <br/> 35 $</p>
                             <SimpleButton text={t("price.buy")}/>
                         </div>  
-                        <div className={classes.priceItem}>
+                        <div className={classes.priceItem} data-aos="fade-up">
                             <h5>{t("price.two.title")}</h5>
                             <ul>
                                 <li>{t("price.two.one")}</li>
@@ -265,7 +279,7 @@ const Main = (props) => {
                             <p>1299 грн / <br/> 45 $</p>
                             <SimpleButton text={t("price.buy")}/>
                         </div> 
-                        <div className={classes.priceItem}>
+                        <div className={classes.priceItem} data-aos="fade-up">
                             <h5>{t("price.three.title")}</h5>
                             <ul>
                                 <li>{t("price.three.one")}</li>

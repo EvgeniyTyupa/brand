@@ -25,3 +25,82 @@
     align-items: flex-start;
     justify-content: space-between;
 }
+.menuItems{
+    display: flex;
+    flex-direction: column;
+}
+.menuItems a {
+    text-decoration: none;
+    font-size: 28px;
+    color: black;
+    margin-bottom: 15px;
+}
+.footer{
+    width: 100%;
+}
+.links{
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.socialLinks {
+    font-size: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.socialLinks svg{
+    font-size: 30px;
+    width: auto;
+}
+.languageButtons{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.languageButtons button{
+    color: black;
+    font-family: 'Helvetica' !important;
+    font-weight: bold;
+    font-size: 28px;
+    padding: 0;
+}
+.languageButtons button + button{
+    margin-left: 10px;
+    border-radius: 50% !important;
+}
+.activeLang{
+    color: #ac0000 !important;
+}
+
+@media screen and (max-width: 568px) {
+    .paper{
+        padding-left: 40px;
+    }
+    .socialLinks {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .menuItems a {
+        font-size: 22px;
+    }
+    .languageButtons button {
+        font-size: 22px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .paper {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 20px;
+    }
+    .menuItems a {
+        font-size: 20px;
+    }
+    .languageButtons button {
+        font-size: 20px !important;
+    }
+}
