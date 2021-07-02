@@ -335,6 +335,9 @@ h1 {
     margin-bottom: 90px;
     position: relative;
 }
+.trenerMainInfo {
+    display: none;
+}
 .trenerTextOne {
     top: 15px;
 }
@@ -607,6 +610,9 @@ h1 {
     }
     .footerLinks svg{
         font-size: 50px !important;
+    }
+    .trenerMainInfo {
+        display: block;
     }
     .trener h2 {
         margin-bottom: 0px;

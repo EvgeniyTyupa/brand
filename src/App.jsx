@@ -11,6 +11,8 @@ const App = () => {
        <Navbar/>
         <Switch>
           <Route exact path="/" render={()=><Main/>}/>
+          <Route exact path="/thankyou" render={()=><Main/>}/>
+          <Route exact path="/success" render={()=><Main/>}/>
         </Switch>
       </div>
     </BrowserRouter>

@@ -18,13 +18,23 @@ import { useRef, useEffect } from 'react'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { useState } from 'react'
+import Register from 'Components/Register/Register'
+import { connect } from 'react-redux'
+import Preloader from 'Components/Preloader/Preloader'
+import { Redirect, useLocation } from 'react-router-dom'
+import { setCurrentLanguage } from 'Redux/commonReducer'
+import SuccessModal from 'Components/SuccessModal/SuccessModal'
 
 const Main = (props) => {
     useEffect(() => {
         Aos.init({ duration: 1500 });
     }, []);
 
-    const { t } = useTranslation()
+    const search = useLocation().search
+    const lang = new URLSearchParams(search).get('lang')
+
+    const { t, i18n } = useTranslation()
 
     const priceRef = useRef(null)
 
@@ -32,8 +42,66 @@ const Main = (props) => {
         priceRef.current.scrollIntoView()
     }
 
+    const [isOpenRegister, setIsOpenRegister] = useState(false)
+    const [url, setUrl] = useState("")
+    const [isRedirect, setIsRedirect] = useState(false);
+    const [packageType, setPackageType] = useState(null)
+    const [isOpenSuccessModal, setIsOpenSuccessModal] = useState(false)
+
+    const handleRegisterModal = (packageType) => {
+        setPackageType(packageType)
+        setIsOpenRegister(!isOpenRegister)
+    }
+
+    const handleSuccessModal = () => {
+        setIsOpenSuccessModal(!isOpenSuccessModal)
+    }
+
+    useEffect(() => {
+        setUrl(window.location.href)
+        if(lang === "ua"){
+            i18n.changeLanguage(lang)
+            props.setCurrentLanguage(lang)
+        }
+    }, [])
+
+    useEffect(()=>{
+        if(window.location.pathname === "/success"){
+            setIsOpenSuccessModal(true)
+        }
+        if(window.location.pathname === "/thankyou" && !props.isSuccess){
+            setIsRedirect(true);
+        }
+    },[]);
+
+    useEffect(() => {
+        if(packageType && props.isSuccess){
+            switch(packageType){
+                case "start": {
+                    setTimeout(function(){document.location.href = 'https://secure.wayforpay.com/button/b46945bfdc232';},1000);
+                    break
+                }
+                case "profi": {
+                    setTimeout(function(){document.location.href = 'https://secure.wayforpay.com/button/bd420664cae76';},1000);
+                    break
+                }
+                case "premium": {
+                    setTimeout(function(){document.location.href = 'https://secure.wayforpay.com/button/b0c9f3a735ad0';},1000);
+                    break
+                }
+            }
+        }
+    }, [props.isSuccess])
+
     return(
         <div className={classes.main}>
+
+            {isRedirect && <Redirect to="/"/>}
+            {props.isSuccess && <Redirect to="/thankyou"/>}
+            {props.isFetching && <Preloader/>}
+            {isOpenRegister && <Register packageType={packageType} setPackageType={setPackageType} handleOpen={handleRegisterModal} url={url}/>}
+            {isOpenSuccessModal && <SuccessModal handleOpen={handleSuccessModal}/>}
+
             <div className={classes.homeBlock}>
                 <Container className={classes.home}>
                     <div className={classes.homeSide}>
@@ -230,11 +298,11 @@ const Main = (props) => {
                 </div>
                 <div className={classes.trenerInfo}>
                     <ul>
-                        <li>{t("trener.main.one")}</li>
-                        <li>{t("trener.main.two")}</li>
-                        <li>{t("trener.main.three")}</li>
-                        <li>{t("trener.main.four")}</li>
-                        <li>{t("trener.main.five")}</li>
+                        <li className={classes.trenerMainInfo}>{t("trener.main.one")}</li>
+                        <li className={classes.trenerMainInfo}>{t("trener.main.two")}</li>
+                        <li className={classes.trenerMainInfo}>{t("trener.main.three")}</li>
+                        <li className={classes.trenerMainInfo}>{t("trener.main.four")}</li>
+                        <li className={classes.trenerMainInfo}>{t("trener.main.five")}</li>
                         <li>{t("trener.info.one")}</li>
                         <li>{t("trener.info.two")}</li>
                         <li>{t("trener.info.three")}</li>
@@ -262,7 +330,7 @@ const Main = (props) => {
                                 <li>{t("price.one.five")}</li>
                             </ul>
                             <p>999 грн / <br/> 35 $</p>
-                            <SimpleButton text={t("price.buy")}/>
+                            <SimpleButton text={t("price.buy")} action={() => handleRegisterModal("start")}/>
                         </div>  
                         <div className={classes.priceItem} data-aos="fade-up">
                             <h5>{t("price.two.title")}</h5>
@@ -277,7 +345,7 @@ const Main = (props) => {
                                 <li>{t("price.two.eight")}</li>
                             </ul>
                             <p>1299 грн / <br/> 45 $</p>
-                            <SimpleButton text={t("price.buy")}/>
+                            <SimpleButton text={t("price.buy")} action={() => handleRegisterModal("profi")}/>
                         </div> 
                         <div className={classes.priceItem} data-aos="fade-up">
                             <h5>{t("price.three.title")}</h5>
@@ -293,7 +361,7 @@ const Main = (props) => {
                                 <li>{t("price.three.nine")}</li>
                             </ul>
                             <p>5500 грн / <br/> 200 $</p>
-                            <SimpleButton text={t("price.buy")}/>
+                            <SimpleButton text={t("price.buy")} action={() => handleRegisterModal("premium")}/>
                         </div> 
                     </Container>
                 </div>
@@ -312,4 +380,11 @@ const Main = (props) => {
     )
 }
 
-export default Main
+let mapStateToProps = (state) => ({
+    isFetching: state.common.isFetching,
+    isSuccess: state.common.isSuccess
+})
+
+export default connect(mapStateToProps, {
+    setCurrentLanguage
+})(Main)

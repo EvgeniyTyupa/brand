@@ -1,0 +1,34 @@
+.main {
+    width: 40%;
+}
+.main form {
+    width: 100%;
+    margin-top: 15px;
+}
+.field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.field div {
+    width: 100%;
+}
+.main form button {
+    width: 100% !important;
+    background-color: #ac0000;
+    color: white;
+    font-weight: bold;
+}
+.main form button:hover {
+    background-color: #970505;
+}
+.thankyou {
+    text-align: center;
+}
+
+@media screen and (max-width: 568px) {
+    .main {
+        width: 95%;
+        max-height: 95vh;
+        overflow-y: scroll;
+    }
+}
