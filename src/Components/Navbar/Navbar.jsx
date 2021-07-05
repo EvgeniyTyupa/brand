@@ -53,7 +53,7 @@ const Navbar = (props) => {
                 
                 <SocialLinks className={classes.social}/>
                 
-                <TextField select classes={material} variant="outlined" defaultValue="ru" onChange={handleChangeLanguage}>
+                <TextField select classes={material} variant="outlined" defaultValue="ua" onChange={handleChangeLanguage}>
                         <MenuItem value="ru">RU</MenuItem>
                         <MenuItem value="ua">UA</MenuItem>
                 </TextField>

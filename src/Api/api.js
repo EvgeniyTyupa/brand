@@ -12,11 +12,10 @@ export const googleApi = {
         let phone = formData.phone;
         let email = formData.email;
         let job = formData.job;
-        let why = formData.why;
         let url = formData.url;
 
         // @ts-ignore
-        return axios.post(baseURL, JSON.stringify([[name, phone, email, job, why, url]]), {
+        return axios.post(baseURL, JSON.stringify([[name, phone, email, job, url]]), {
             headers: {
                 'Content-Type': 'application/json'
             }

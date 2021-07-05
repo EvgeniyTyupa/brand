@@ -39,7 +39,7 @@ const Main = (props) => {
     const priceRef = useRef(null)
 
     const handleScrollToPrice = () => {
-        priceRef.current.scrollIntoView()
+        setIsOpenRegister(!isOpenRegister)
     }
 
     const [isOpenRegister, setIsOpenRegister] = useState(false)

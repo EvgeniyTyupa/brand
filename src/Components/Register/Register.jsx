@@ -45,8 +45,7 @@ const Register = (props) => {
             name: "",
             phone: "",
             email: "",
-            job: "",
-            why: ""
+            job: ""
         })
     }
 
@@ -147,32 +146,6 @@ const Register = (props) => {
                                 helperText={error ? error.message : null}
                                 classes={material} 
                                 label={t("register.job")}
-                                variant="outlined"
-                                onChange={onChange}
-                                value={value}
-                            />
-                        )}
-                    />
-                </div>
-                <div className={classes.field}>
-                    <Controller
-                        name="why"
-                        control={control}
-                        defaultValue=""
-                        rules={{
-                            required: {
-                                value: true,
-                                message: t("errors.required")
-                            }
-                        }}
-                        render={({ field: { onChange, value }, fieldState: { error } }) => (
-                            <TextField 
-                                multiline
-                                rows={5}
-                                error={!!error} 
-                                helperText={error ? error.message : null}
-                                classes={material} 
-                                label={t("register.why")}
                                 variant="outlined"
                                 onChange={onChange}
                                 value={value}
